@@ -1,0 +1,47 @@
+<?php // Inkludere filer der forbinder til database og filen med funktioner
+?>
+<?php include('connect.php'); ?>
+<?php include('functions.php') ?>
+
+<?php
+//Hvis der er en kategori så bliver den hentet.
+if (isset($_GET['slug'])) {
+    $post = getPost($_GET['slug']);
+}
+$category = getThisCategory();
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <ul class="nav-bar">
+            <div class="logo">
+                <a href="./home.php"><input type="image" src="./assets/ikea-logo(1).png" height="46px"
+                        width="100px" /></a>
+            </div>
+            <div class="nav-bar-elements">
+                <li> <input type="text" class="search-bar" placeholder="Search.."> </li>
+                <li><a class="logout-btn" href="./logout.php">Logout</a></li>
+            </div>
+        </ul>
+    </nav>
+    <div class="post-container">
+        <h1>Eksempel post</h1>
+        <img class="post-img" src="./assets/woocommerce-placeholder-275x275.png" height="500px" width="500px">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, magnam exercitationem officia vel velit
+            magni quisquam accusamus voluptatem. Aut illo non aperiam possimus eum laudantium quae nemo rerum
+            perspiciatis hic?</p>
+    </div>
+
+</html>
